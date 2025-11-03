@@ -21,7 +21,7 @@ public class LeafDispencer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.L))
         {
             Instantiate(leaf, transform.position, transform.rotation);
         }
