@@ -50,9 +50,7 @@ public class MyFirstPlayerController : MonoBehaviour
         }
         if (myMovement.magnitude != 0)
         {
-            print("Value before normalisation: " + myMovement);
             myMovement.Normalize();
-            print("Value after normalisation: " + myMovement);
         }
         transform.position = transform.position + myMovement*mySpeed;
     }

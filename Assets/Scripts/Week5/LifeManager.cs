@@ -7,11 +7,6 @@ public class LifeManager : MonoBehaviour
     float myAge = 0f;
     float maxAge = 5;
     // Start is called before the first frame update
-    void Start()
-    {
-        print(Random.Range(1f, 3f));//Once you udnerstand how to use this function, remove this code from here. 
-    }
-
 
     /*------- Challenge 2 ------- Intermediate -------
      * 1. Line 12 shows how you can use Random.Range(minimum value, maximum value);
