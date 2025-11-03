@@ -7,7 +7,7 @@ using UnityEngine;
  - You can update the values of the target vector from inside Unity or change it here in the code. 
    select the follower game object and update its my target from the inspector window
 - Define a variable for speed of type float. 
-- Write the code inside the MoveToTarget function to move the follower game object to "my target" using the speed variable 
+- Write the code inside the MoveToTarget function to move the follower game object to "my target" using the speed variable... 
 */
 
 public class MoveFromAToB : MonoBehaviour
