@@ -23,7 +23,7 @@ public class LeafManager : MonoBehaviour
     }
     void CheckInputs() { 
         if(Input.GetKeyDown(KeyCode.L)) {
-            AddNewLeaves(Random.Range(3,10));
+            AddRandomLeaves(Random.Range(3,10));
         }
     }
     /*
@@ -39,6 +39,15 @@ public class LeafManager : MonoBehaviour
         for (int loopIndex = 0; loopIndex < howMany; loopIndex += 1)
         {
             Instantiate(leaf, transform.position, transform.rotation);
+        }
+    }
+
+    void AddRandomLeaves (int amount)
+    {
+        for (int loopIndex = 0;loopIndex < amount; loopIndex += 1)
+        {
+            Vector3 position = new Vector3(Random.Range(-halfWidth, halfWidth), Random.Range(-halfHeight, halfHeight), 0f);
+            Instantiate(leaf, position, transform.rotation);
         }
     }
 }
