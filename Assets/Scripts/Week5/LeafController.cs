@@ -11,13 +11,19 @@ using UnityEngine;
 */
 public class LeafController : MonoBehaviour
 {
+    float leafSpeed = 0f;
+    Vector3 leafDirection = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
+        leafDirection = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0f);
+        leafDirection.Normalize();
+        leafSpeed = Random.Range(0f, 0.05f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.position += leafDirection * leafSpeed;
     }
 }
