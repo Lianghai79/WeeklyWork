@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FollowerLeaf : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class FollowerLeaf : MonoBehaviour
       */
     public GameObject thePlayer;
     MyFirstPlayerController playerController;
+    Vector3 myTarget = Vector3.zero;
+    Vector3 direction = Vector3.zero;
+    float speed = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +28,23 @@ public class FollowerLeaf : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        myTarget = thePlayer.transform.position;
+        follow();
         CheckDistance();
     }
     void CheckDistance() {
-        // if distance is less than 0.1f 
-        playerController.GameOver();
+        if (Vector3.Distance(myTarget, transform.position) < 0.1f)
+            { playerController.GameOver(); }
+    }
+    void follow()
+    {
+        direction = (myTarget - transform.position);
+
+        if (direction.magnitude != 0)
+        { 
+            direction.Normalize();
+        }
+
+        transform.position += direction * speed;
     }
 }
