@@ -15,10 +15,21 @@ public class LifeManager : MonoBehaviour
      */
     // Update is called once per frame
 
+    void Start()
+    {
+        maxAge = Random.Range(3f, 7f);
+    }
+
     void Update()
     {
         myAge += Time.deltaTime;
-        if (myAge >= maxAge) { 
+        checkAge();
+    }
+
+    void checkAge()
+    {
+        if (myAge >= maxAge)
+        {
             Destroy(gameObject);
         }
     }
