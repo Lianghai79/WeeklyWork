@@ -18,9 +18,11 @@ void Start()
      * 2. When health value changes, update the colour accordingly by calling the ChangeColour function iin ColorChager that you are going to implement.
      */
 
-    public void TakeDamage(float damageAmount) {
+public void TakeDamage(float damageAmount) 
+{
     myHealth -= damageAmount;
-    if (myHealth < minHealth) {
+    if (myHealth < minHealth) 
+    {
         myHealth = minHealth;
     }
     print("player is taking damage! " + myHealth);
@@ -38,11 +40,15 @@ public void Heal(float healAmount)
         myHealth += 0.1f;
     }
 
+public void SetHealth(float startValue)
+    {
+        myHealth = startValue;
+    }
 
-
-public float GetHealth() { 
-    return myHealth;
-}
+public float GetHealth() 
+    { 
+        return myHealth;
+    }
 // Update is called once per frame
 void Update()
 {
