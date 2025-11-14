@@ -7,11 +7,11 @@ public class HealthManager : MonoBehaviour
     float myHealth = 80;
     float maxHealth = 100;
     float minHealth = 0;
-    public ColorChanger playerColour;
+    ColorChanger playerColour;
     // Start is called before the first frame update
 void Start()
 {
-
+    playerColour = GetComponent<ColorChanger>();
 }
 
     /*------- Week 6: ------  ------  Challenge 3 (Continued on colorchanger script)------  ------  Hard ------
@@ -19,7 +19,7 @@ void Start()
      * 2. When health value changes, update the colour accordingly by calling the ChangeColour function iin ColorChager that you are going to implement.
      */
 
-public void TakeDamage(float damageAmount) 
+    public void TakeDamage(float damageAmount) 
 {
     myHealth -= damageAmount;
     if (myHealth < minHealth) 

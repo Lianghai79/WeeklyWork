@@ -14,10 +14,6 @@ public class PlayerStateManager : MonoBehaviour
     void Start()
     {
         playerHealthManager = GetComponent<HealthManager>();
-        playerHealthManager.SetHealth(100);
-        print(playerHealthManager.GetHealth());
-
-        
     }
 
     // Update is called once per frame

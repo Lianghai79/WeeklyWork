@@ -10,13 +10,16 @@ public class PlayerCharacterController : MonoBehaviour
     Vector2 targetVelocity = new Vector2(0,0);
 
     public float movementSpeed = 0.5f;
-    public float jumpAmount = 15f;
+    public float jumpAmount = 0.05f;
 
     Rigidbody2D playerRigidBody;
+    HealthManager playerHealthManager;
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
+        playerHealthManager = GetComponent<HealthManager>();
+        playerHealthManager.SetHealth(100);
     }
 
     // Update is called once per frame
