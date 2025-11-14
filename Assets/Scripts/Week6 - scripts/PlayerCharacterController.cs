@@ -27,7 +27,7 @@ public class PlayerCharacterController : MonoBehaviour
     {
         CheckInputs();
         targetVelocity.Set(xMovement * movementSpeed, jumpValue * jumpAmount);
-        playerRigidBody.velocity += targetVelocity;
+        playerRigidBody.linearVelocity += targetVelocity;
 
     }
     /*------- Week 6: ------  ------  Challenge 4 ------  ------  Easy ------
