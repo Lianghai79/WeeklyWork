@@ -22,14 +22,15 @@ public class FollowerLeaf : MonoBehaviour
     {
         thePlayer = GameObject.Find("Player");
         print(thePlayer.transform.position);
+        myTarget = thePlayer.transform.position;
         playerController = thePlayer.GetComponent<MyFirstPlayerController>();//leave this as is
+        follow();
+        transform.position += direction * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        myTarget = thePlayer.transform.position;
-        follow();
         CheckDistance();
     }
     void CheckDistance() {
@@ -45,6 +46,5 @@ public class FollowerLeaf : MonoBehaviour
             direction.Normalize();
         }
 
-        transform.position += direction * speed;
     }
 }
