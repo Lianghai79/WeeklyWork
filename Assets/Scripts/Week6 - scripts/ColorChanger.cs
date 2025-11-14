@@ -6,9 +6,9 @@ public class ColorChanger : MonoBehaviour
 {
     // Start is called before the first frame update
     SpriteRenderer myRenderer;
-    float red = 0f;
-    float green = 0f;
-    float blue = 0f;
+    float red = 1f;
+    float green = 1f;
+    float blue = 1f;
     void Start()
     {
         myRenderer = GetComponent<SpriteRenderer>();
@@ -59,7 +59,10 @@ public class ColorChanger : MonoBehaviour
      * 2. As the player health changes, call the function above from the "health manager" class to update the colour okf player.
      *    note: - 100 health is 100% opacity and 0 health is 0% opacity
      *          - Both Color and Color32 accept Red,Green,Blue, Alpha (RGBA) values
-     *      
-     * 2. Write a function that flips the player sprite whenever the player presses "f" 
     */
+
+    public void changeColour(float alpha)
+    {
+        myRenderer.color = new Color(red, green, blue, alpha);
+    }
 }

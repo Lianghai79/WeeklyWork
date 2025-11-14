@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour
     float myHealth = 80;
     float maxHealth = 100;
     float minHealth = 0;
+    public ColorChanger playerColour;
     // Start is called before the first frame update
 void Start()
 {
@@ -26,6 +27,7 @@ public void TakeDamage(float damageAmount)
         myHealth = minHealth;
     }
     print("player is taking damage! " + myHealth);
+    playerColour.changeColour(myHealth/100);
 }
 public void Heal(float healAmount)
 {
@@ -35,6 +37,7 @@ public void Heal(float healAmount)
         myHealth = maxHealth;
     }
     print("player is healing! " + myHealth);
+    playerColour.changeColour(myHealth/100);
 }
     void AddHealth() {
         myHealth += 0.1f;
